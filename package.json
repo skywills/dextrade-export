@@ -1,0 +1,44 @@
+{
+  "name": "dextrade-export",
+  "version": "1.0.0",
+  "description": "DexTrade Data Export",
+  "repository": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/sinon": "^10.0.6",
+    "@types/uuid": "^8.3.4",
+    "chai": "^4.2.0",
+    "dotenv": "^11.0.0",
+    "mocha": "^9.2.1",
+    "prettier": "^2.7.1",
+    "sinon": "^12.0.1",
+    "ts-node": "^8.10.1",
+    "tsconfig-paths": "^3.9.0"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.42",
+    "axios": "^0.24.0",
+    "json-2-csv": "^3.17.1",
+    "mxw-libs-api-token": "^1.0.11",
+    "mxw-libs-clogger": "^1.0.0",
+    "mxw-libs-database": "^1.0.18",
+    "mxw-libs-errors": "^1.0.5",
+    "mxw-libs-utils": "^1.0.27",
+    "typescript": "^3.9.3",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "build": "npm run build-ts",
+    "build-ts": "tsc",
+    "dev": "npm run build && NODE_ENV=local node dist/server.js",
+    "start": "NODE_ENV=local node dist/server.js",
+    "test": "mocha --recursive --timeout 30000 -r tsconfig-paths/register -r ts-node/register src/**/*.test.ts src/**/**/*.test.ts src/**/**/**/*.test.ts",
+    "test-this": "mocha --recursive --timeout 30000 -r tsconfig-paths/register -r ts-node/register",
+    "debug": "tsc && node --inspect-brk=0.0.0.0:9229 dist/server.js",
+    "debug-this": "npm run build && mocha --inspect-brk=0.0.0.0:9229 --timeout 3000000 -r ts-node/register",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
